@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link href="./styles.css" rel="stylesheet" />
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BD3-ATV5-YHAN</title>
+    </head>
+
+    <body>
+
+    <div class="content">
+            <ul id="student-list"></ul>
+        </div>
+    </body>
+
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCgrld57kyxPl679xGGPnjJF9Dy0jNSep8",
+            authDomain: "bd3-nosql-atv5-2cb4f.firebaseapp.com",
+            projectId: "bd3-nosql-atv5-2cb4f",
+            storageBucket: "bd3-nosql-atv5-2cb4f.appspot.com",
+            messagingSenderId: "284439524547",
+            appId: "1:284439524547:web:d051dbfba1487400e39e76",
+            measurementId: "G-W5E090FV44"
+        };         
+
+        firebase.initializeApp(firebaseConfig);
+
+        const db = firebase.firestore(); 
+        
+        //console.log(db) 
+
+
+    </script>
+
+    <script src="./app.js"></script>
+
+</html>
