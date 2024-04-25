@@ -1,36 +1,52 @@
+
 const studentsList = document.querySelector('#student-list')
 
 
 
 function renderStudents(doc){
-    let list    = document.createElement("li");
-    let titulo  = document.createElement("span")
-    let autor   = document.createElement("span")
-    let excluir = document.createElement("div")
+    let list     = document.createElement("li");
+    let idturma  = document.createElement("span")
+    let nome     = document.createElement("span")
+    let cpf      = document.createElement("span")
+    let rg       = document.createElement("span")
+    let telAluno = document.createElement("span")
+    let telResp  = document.createElement("span")
+    let email    = document.createElement("span")
+    let dataNasc = document.createElement("span")
+
+    let excluir  = document.createElement("div")
 
     excluir.textContent = 'X'
 
     list.setAttribute('data-id', doc.id)
-    titulo.textContent = doc.data().titulo
-    autor.textContent = doc.data().autor   
+    idturma.textContent  = doc.data().id_turma
+    nome.textContent     = doc.data().nome   
+    cpf.textContent      = doc.data().cpf
+    rg.textContent       = doc.data().rg
+    telAluno.textContent = doc.data().telAluno
+    telResp.textContent  = doc.data().telResp
+    email.textContent    = doc.data().email
+    dataNasc.textContent = doc.data().datanasc
     
-    list.appendChild(titulo)
-    list.appendChild(autor)
+    list.appendChild(idturma)
+    list.appendChild(nome)
+    list.appendChild(cpf)
+    list.appendChild(rg)
+    list.appendChild(telAluno)
+    list.appendChild(telResp)
+    list.appendChild(email)
+    list.appendChild(dataNasc)
     list.appendChild(excluir)
 
     excluir.addEventListener('click', (event) => {
         event.stopPropagation()
 
         let id = event.target.parentElement.getAttribute('data-id')
-        // alert(id)
-        db.collection('aluno').doc(id).delete()
-        .then(()=>{window.location.reload()})
-        
-        
-        
+        db.collection('alunos').doc(id).delete()
+        .then(()=>{window.location.reload()})        
 })
 
-    livroList.appendChild(list)
+    studentsList.appendChild(list)
 }
 
 
@@ -39,9 +55,8 @@ db.collection('alunos')
     .get()
     .then(
         (snapshot) => {
-            // console.log(snapshot.docs)
             snapshot.docs.forEach(doc => {
-                renderBook(doc)
+                renderStudents(doc)
             });
         }
     )
