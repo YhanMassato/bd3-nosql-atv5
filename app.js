@@ -1,26 +1,39 @@
 
 const studentsList = document.querySelector('#student-list')
 
-
-
 function renderStudents(doc){
     let list     = document.createElement("li");
     let idturma  = document.createElement("span")
+    idturma.classList.add('liSubText', 'idTurma')
+
     let nome     = document.createElement("span")
+    nome.classList.add('nome')
+
     let cpf      = document.createElement("span")
+    cpf.classList.add('liSubText', 'cpf')
+
     let rg       = document.createElement("span")
+    rg.classList.add('liSubText', 'rg')
+
     let telAluno = document.createElement("span")
+    telAluno.classList.add('liSubText', 'telAluno')
+
     let telResp  = document.createElement("span")
+    telResp.classList.add('liSubText', 'telResp')
+
     let email    = document.createElement("span")
+    email.classList.add('liSubText', 'email')
+
     let dataNasc = document.createElement("span")
+    dataNasc.classList.add('liSubText', 'dataNasc')
 
     let excluir  = document.createElement("div")
 
     excluir.textContent = 'X'
 
     list.setAttribute('data-id', doc.id)
-    idturma.textContent  = doc.data().id_turma
-    nome.textContent     = doc.data().nome   
+    nome.textContent     = doc.data().nome
+    idturma.textContent  = doc.data().id_turma   
     cpf.textContent      = doc.data().cpf
     rg.textContent       = doc.data().rg
     telAluno.textContent = doc.data().telAluno
@@ -28,8 +41,8 @@ function renderStudents(doc){
     email.textContent    = doc.data().email
     dataNasc.textContent = doc.data().datanasc
     
-    list.appendChild(idturma)
     list.appendChild(nome)
+    list.appendChild(idturma)
     list.appendChild(cpf)
     list.appendChild(rg)
     list.appendChild(telAluno)

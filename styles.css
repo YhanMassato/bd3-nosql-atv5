@@ -1,6 +1,17 @@
 body{
-    background: #999;
-    font-family: ubuntu;
+    background: #d4af09;
+}
+
+a{
+    padding: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #021897;
+    color : white;
+    font-weight: 700;
+    border-radius: 10px;
+    width: 25%;
+    text-align: center;
 }
 
 h1{
@@ -17,7 +28,9 @@ h1{
     margin: 30px auto;
     padding:  20px 30px;
     border-radius: 10px;
-    box-shadow: 1px 3px 5px rgba(0,0,0,0.1)
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
 }
 
 ul{
@@ -64,14 +77,13 @@ li div{
 
 form input{
     float: left;
-    width: 38%;
+    width: 50%;
     margin: 0;
     border: 0;
     border-bottom: 1px solid #eee;
     margin: 0 1%;
     padding: 15px;
-    display: block;
-    box-sizing: border-box;
+    display: flex;
     font-size: 18px;
 }
 
@@ -85,13 +97,47 @@ form:after{
 
 button{
     border: 0;
-    background: #fff;
+    background: #021897;
     border-radius: 10px;
     padding: 13px;
     width: 14%;
     box-shadow: -1px 0px 1px rgba(0,0,0,0.1);
     font-weight: bold;
-    font-family: ubuntu;
     letter-spacing: 1px;
     color: #999;
+}
+
+.idTurma::before{
+    content:"TURMA: ‎";
+    font-weight: 800;
+}
+
+.cpf::before{
+    content:"CPF: ‎";
+    font-weight: 800;
+}
+
+.rg::before{
+    content:"RG: ‎";
+    font-weight: 800;
+}
+
+.telResp::before{
+    content:"TELEFONE RESPONSÁVEL: ‎";
+    font-weight: 800;
+}
+
+.telAluno::before{
+    content:"TELEFONE DO ALUNO: ‎";
+    font-weight: 800;
+}
+
+.email::before{
+    content:"EMAIL: ‎";
+    font-weight: 800;
+}
+
+.dataNasc::before{
+    content:"DATA DE NASCIMENTO:‎ ";
+    font-weight: 800;
 }
